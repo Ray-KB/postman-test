@@ -1,0 +1,40 @@
+{
+  "info": {
+    "_postman_id": "3a5d56e4-9768-4297-907a-c7eec45441cd",
+    "name": "test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "获取banner列表",
+      "id": "56204c5b-35e1-4523-a027-9e7f1c70dfce",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/api/php/banner/fetchBannerList",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "php",
+            "banner",
+            "fetchBannerList"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
