@@ -10,19 +10,19 @@
       "id": "56204c5b-35e1-4523-a027-9e7f1c70dfce",
       "request": {
         "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "",
-              "type": "string"
-            }
-          ]
+          "type": "noauth"
         },
         "method": "GET",
-        "header": [],
+        "header": [
+          {
+            "key": "cc",
+            "value": "as",
+            "type": "text",
+            "uuid": "03184f12-3d9c-49cb-bd52-3b1350a97bd3"
+          }
+        ],
         "url": {
-          "raw": "{{host}}/api/php/banner/fetchBannerList",
+          "raw": "{{host}}/api/php/banner/fetchBannerList?appId=1",
           "host": [
             "{{host}}"
           ],
@@ -31,6 +31,13 @@
             "php",
             "banner",
             "fetchBannerList"
+          ],
+          "query": [
+            {
+              "key": "appId",
+              "value": "1",
+              "uuid": "629872e0-a87d-4f48-bd0f-aa1f93079500"
+            }
           ]
         }
       },
