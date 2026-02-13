@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: 用户管理系统测试 API
+  description: |
+    该文档包含完整的接口定义、测试用例数据以及环境配置。
+    主要用于演示 Postman Specs 的自动化校验功能。
+  version: 1.0.0
+
+# 1. 环境定义 (Servers)
+servers:
+  - url: https://dev-api.example.com/v1
+    description: 开发环境 (Development)
+  - url: https://api.example.com/v1
+    description: 生产环境 (Production)
+
+# 2. 认证定义 (Security)
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+
+  schemas:
+    User:
+      type: object
+      required: [id, name]
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 101
+        name:
+          type: string
+          example: "张三"
+        email:
+          type: string
+          format: email
+          example: "zhangsan@example.com"
+        role:
+          type: string
+          enum: [admin, user]
+          example: "user"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+
+# 3. 接口与测试用例 (Paths & Examples)
+paths:
+  /users/{userId}:
+    get:
+      summary: 获取用户信息
+      tags:
+        - 用户模块
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: 用户唯一 ID
+      responses:
+        '200':
+          description: 成功返回用户信息
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              # 这里定义了两个不同的测试用例场景
+              examples:
+                case_admin_user:
+                  summary: 测试用例 1：管理员用户
+                  value:
+                    id: 1
+                    name: "管理员小王"
+                    email: "admin@test.com"
+                    role: "admin"
+                case_normal_user:
+                  summary: 测试用例 2：普通用户
+                  value:
+                    id: 99
+                    name: "普通员工李四"
+                    email: "lisi@test.com"
+                    role: "user"
+        '401':
+          description: 认证失败（未提供 API Key）
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                auth_error:
+                  value:
+                    code: 401
+                    message: "Invalid or missing API Key"
+        '404':
+          description: 用户未找到
+      security:
+        - ApiKeyAuth: []
