@@ -21,27 +21,12 @@
                     {
                       "listen": "test",
                       "script": {
-                        "id": "09fb0fb3-7485-402b-ab3f-5d489ba8031f",
+                        "type": "text/javascript",
                         "exec": [
                           "pm.test(\"状态码应该是 200\", function () {",
                           "    pm.response.to.have.status(200);",
                           "});"
-                        ],
-                        "type": "text/javascript",
-                        "packages": {},
-                        "requests": {}
-                      }
-                    },
-                    {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "e5e78983-6806-4e18-b200-fada53530ed7",
-                        "exec": [
-                          ""
-                        ],
-                        "type": "text/javascript",
-                        "packages": {},
-                        "requests": {}
+                        ]
                       }
                     }
                   ],
@@ -71,13 +56,11 @@
                       "query": [
                         {
                           "key": "orderNo",
-                          "value": "DC862728165358559819",
-                          "uuid": "753254a3-9f38-4313-b1c3-1a6912c19ce8"
+                          "value": "DC862728165358559819"
                         },
                         {
                           "key": "paymentSupplier",
-                          "value": "MasterPay",
-                          "uuid": "00f26892-3c2a-46d8-8130-35758f56200f"
+                          "value": "MasterPay"
                         }
                       ]
                     }
@@ -135,29 +118,14 @@
                   "name": "查询三方账户余额",
                   "event": [
                     {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "f7fafbe0-763d-41d6-a312-0cca1f6312c9",
-                        "exec": [
-                          ""
-                        ],
-                        "type": "text/javascript",
-                        "packages": {},
-                        "requests": {}
-                      }
-                    },
-                    {
                       "listen": "test",
                       "script": {
-                        "id": "c7df3493-d331-48c8-92cf-d721eacd84af",
+                        "type": "text/javascript",
                         "exec": [
                           "pm.test(\"状态码应该是 200\", function () {",
                           "    pm.response.to.have.status(200);",
                           "});"
-                        ],
-                        "type": "text/javascript",
-                        "packages": {},
-                        "requests": {}
+                        ]
                       }
                     }
                   ],
@@ -187,8 +155,7 @@
                       "query": [
                         {
                           "key": "paymentSupplier",
-                          "value": "OKPay",
-                          "uuid": "f34e2bc7-4acd-4f78-96af-a9b3949da472"
+                          "value": "OKPay"
                         }
                       ]
                     }
@@ -242,21 +209,9 @@
                   "name": "代付回调",
                   "event": [
                     {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "0614a4c5-bf0c-4e2d-b9e1-a44fd9d73536",
-                        "exec": [
-                          ""
-                        ],
-                        "type": "text/javascript",
-                        "packages": {},
-                        "requests": {}
-                      }
-                    },
-                    {
                       "listen": "test",
                       "script": {
-                        "id": "4e84e926-eaea-4044-9344-f17887dbd946",
+                        "type": "text/javascript",
                         "exec": [
                           "pm.test(\"状态码应该是 200\", function () {",
                           "    pm.response.to.have.status(200);",
@@ -269,10 +224,7 @@
                           "    pm.expect(jsonData.code).to.equal(2051);",
                           "    pm.expect(jsonData.message).to.match(/^当前状态不允许此操作/);",
                           "});"
-                        ],
-                        "type": "text/javascript",
-                        "packages": {},
-                        "requests": {}
+                        ]
                       }
                     }
                   ],
@@ -325,13 +277,7 @@
                           "value": "2",
                           "type": "text"
                         }
-                      ],
-                      "options": {
-                        "raw": {
-                          "headerFamily": "json",
-                          "language": "json"
-                        }
-                      }
+                      ]
                     },
                     "url": {
                       "raw": "{{host}}/api/php/User/withdrawCallback?channel=OKPay",
@@ -347,8 +293,7 @@
                       "query": [
                         {
                           "key": "channel",
-                          "value": "OKPay",
-                          "uuid": "7291361b-135a-4ad6-9277-7be4e1e7ea91"
+                          "value": "OKPay"
                         }
                       ]
                     }
