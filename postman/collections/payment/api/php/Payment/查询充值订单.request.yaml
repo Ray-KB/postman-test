@@ -1,6 +1,7 @@
 $kind: http-request
-url: "{{host}}:/api/php/Payment/testQueryDepositOrder?orderNo=DC862728165358559\
-  819&paymentSupplier=MasterPay#"
+name: 查询充值订单
+url: "{{host}}/api/php/Payment/testQueryDepositOrder?orderNo=DC8627281653585598\
+  19&paymentSupplier=MasterPay#"
 method: GET
 headers:
   Accept: application/json
@@ -14,5 +15,4 @@ scripts:
           pm.response.to.have.status(200);
       });
     language: text/javascript
-examples: ./.resources/查询充值订单.resources/examples
 order: 1000
