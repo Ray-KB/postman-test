@@ -1,11 +1,13 @@
 $kind: http-request
-name: 查询三方账户余额
-url: "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay#"
+name: queryBalance
+url: "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay"
 method: GET
 headers:
-  Accept: application/json
+  - key: Accept
+    value: application/json
 queryParams:
-  paymentSupplier: OKPay
+  - key: paymentSupplier
+    value: OKPay
 scripts:
   - type: afterResponse
     code: |-
@@ -14,3 +16,4 @@ scripts:
       });
     language: text/javascript
 order: 2000
+examples: ./.resources/queryBalance.resources/examples
