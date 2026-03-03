@@ -4,13 +4,10 @@ url: "{{host}}/api/php/Payment/testQueryDepositOrder?orderNo=DC8627281653585598\
   19&paymentSupplier=MasterPay"
 method: GET
 headers:
-  - key: Accept
-    value: application/json
+  Accept: application/json
 queryParams:
-  - key: orderNo
-    value: DC862728165358559819
-  - key: paymentSupplier
-    value: MasterPay
+  orderNo: DC862728165358559819
+  paymentSupplier: MasterPay
 scripts:
   - type: afterResponse
     code: |-
@@ -19,4 +16,3 @@ scripts:
       });
     language: text/javascript
 order: 1000
-examples: ./.resources/queryDepositOrder.resources/examples

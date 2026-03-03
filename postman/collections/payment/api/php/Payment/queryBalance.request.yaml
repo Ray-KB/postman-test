@@ -3,11 +3,9 @@ name: queryBalance
 url: "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay"
 method: GET
 headers:
-  - key: Accept
-    value: application/json
+  Accept: application/json
 queryParams:
-  - key: paymentSupplier
-    value: OKPay
+  paymentSupplier: OKPay
 scripts:
   - type: afterResponse
     code: |-
@@ -16,4 +14,3 @@ scripts:
       });
     language: text/javascript
 order: 2000
-examples: ./.resources/queryBalance.resources/examples
