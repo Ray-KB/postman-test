@@ -1,5 +1,4 @@
 $kind: http-example
-name: OKPay
 request:
   url: "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay"
   method: GET

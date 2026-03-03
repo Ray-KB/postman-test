@@ -1,5 +1,4 @@
 $kind: http-request
-name: withdrawCallback
 url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay"
 method: POST
 headers:
