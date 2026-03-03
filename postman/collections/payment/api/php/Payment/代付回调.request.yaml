@@ -1,9 +1,8 @@
 $kind: http-request
 name: 代付回调
-url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay#"
+url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay"
 method: POST
 headers:
-  Content-Type: application/json
   Accept: application/json
 queryParams:
   channel: OKPay

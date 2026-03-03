@@ -1,5 +1,6 @@
 name: dev
 values:
   - key: host
-    value: 'https://u3d-dev-web.kbtech.cc/dev'
+    value: https://u3d-dev-web.kbtech.cc/dev
     enabled: true
+color: null

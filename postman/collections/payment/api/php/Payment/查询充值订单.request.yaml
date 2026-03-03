@@ -16,3 +16,4 @@ scripts:
       });
     language: text/javascript
 order: 1000
+examples: ./.resources/查询充值订单.resources/examples
