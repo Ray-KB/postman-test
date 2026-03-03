@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  paymentSupplier: OKPay
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("状态码应该是 200", function () {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+examples: ./.resources/查询三方账户余额.resources/examples
+order: 2000

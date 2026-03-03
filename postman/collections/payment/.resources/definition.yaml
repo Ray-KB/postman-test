@@ -1,0 +1,4 @@
+$kind: collection
+description: 幸运转盘活动接口
+variables:
+  baseUrl: http://genius-game.kbtech.local

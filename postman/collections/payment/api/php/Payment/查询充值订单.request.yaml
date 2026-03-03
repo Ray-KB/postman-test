@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{host}}/api/php/Payment/testQueryDepositOrder?orderNo=DC8627281653585598\
+  19&paymentSupplier=MasterPay"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  orderNo: DC862728165358559819
+  paymentSupplier: MasterPay
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("状态码应该是 200", function () {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+examples: ./.resources/查询充值订单.resources/examples
+order: 1000

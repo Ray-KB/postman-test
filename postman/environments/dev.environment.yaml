@@ -1,0 +1,5 @@
+name: dev
+values:
+  - key: host
+    value: 'https://u3d-dev-web.kbtech.cc/dev'
+    enabled: true

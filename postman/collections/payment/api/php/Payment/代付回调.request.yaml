@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+queryParams:
+  channel: OKPay
+body:
+  type: urlencoded
+  content:
+    mchId: "1000"
+    out_trade_no: WC869478861258006203
+    currency: PKR
+    money: "100.00"
+    real_money: "100.00"
+    status: "2"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("状态码应该是 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("响应 code 应该是 2051 且消息匹配", function () {
+          var jsonData = pm.response.json();
+          pm.expect(jsonData).to.have.property('code');
+          pm.expect(jsonData).to.have.property('message');
+          pm.expect(jsonData.code).to.equal(2051);
+          pm.expect(jsonData.message).to.match(/^当前状态不允许此操作/);
+      });
+    language: text/javascript
+examples: ./.resources/代付回调.resources/examples
+order: 3000

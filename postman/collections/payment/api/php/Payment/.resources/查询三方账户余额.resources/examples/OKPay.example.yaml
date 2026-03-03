@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    paymentSupplier: OKPay
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: "{}"
+order: 1000
