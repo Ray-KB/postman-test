@@ -1,6 +1,7 @@
 $kind: http-example
+name: OKPay
 request:
-  url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay"
+  url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay#"
   method: POST
   headers:
     Content-Type: application/x-www-form-urlencoded

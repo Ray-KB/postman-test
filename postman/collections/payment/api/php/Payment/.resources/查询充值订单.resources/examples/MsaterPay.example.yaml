@@ -1,7 +1,8 @@
 $kind: http-example
+name: MsaterPay
 request:
   url: "{{host}}/api/php/Payment/testQueryDepositOrder?orderNo=DC8627281653585598\
-    19&paymentSupplier=MasterPay"
+    19&paymentSupplier=MasterPay#"
   method: GET
   headers:
     Accept: application/json

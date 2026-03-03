@@ -1,5 +1,6 @@
 $kind: http-request
-url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay"
+name: 代付回调
+url: "{{host}}/api/php/User/withdrawCallback?channel=OKPay#"
 method: POST
 headers:
   Content-Type: application/json
@@ -30,5 +31,4 @@ scripts:
           pm.expect(jsonData.message).to.match(/^当前状态不允许此操作/);
       });
     language: text/javascript
-examples: ./.resources/代付回调.resources/examples
 order: 3000
