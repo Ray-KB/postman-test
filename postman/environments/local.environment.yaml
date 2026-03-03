@@ -1,6 +1,5 @@
 name: local
 values:
   - key: host
-    value: http://genius-game.kbtech.local
+    value: 'http://genius-game.kbtech.local'
     enabled: true
-color: null
