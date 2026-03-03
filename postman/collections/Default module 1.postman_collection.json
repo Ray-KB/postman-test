@@ -1,0 +1,466 @@
+{
+  "info": {
+    "_postman_id": "03a9e75e-ae7b-4290-b594-35cc23ca3f59",
+    "name": "payment",
+    "description": "幸运转盘活动接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "php",
+          "item": [
+            {
+              "name": "Payment",
+              "item": [
+                {
+                  "name": "查询充值订单",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "09fb0fb3-7485-402b-ab3f-5d489ba8031f",
+                        "exec": [
+                          "pm.test(\"状态码应该是 200\", function () {",
+                          "    pm.response.to.have.status(200);",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "e5e78983-6806-4e18-b200-fada53530ed7",
+                        "exec": [
+                          ""
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "id": "6060e8a4-d196-44d9-ae4b-d066a8d10b48",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{host}}/api/php/Payment/testQueryDepositOrder?orderNo=DC862728165358559819&paymentSupplier=MasterPay",
+                      "host": [
+                        "{{host}}"
+                      ],
+                      "path": [
+                        "api",
+                        "php",
+                        "Payment",
+                        "testQueryDepositOrder"
+                      ],
+                      "query": [
+                        {
+                          "key": "orderNo",
+                          "value": "DC862728165358559819",
+                          "uuid": "753254a3-9f38-4313-b1c3-1a6912c19ce8"
+                        },
+                        {
+                          "key": "paymentSupplier",
+                          "value": "MasterPay",
+                          "uuid": "00f26892-3c2a-46d8-8130-35758f56200f"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "cc6054ad-0274-4015-a774-29ff832c02a1",
+                      "name": "MsaterPay",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{host}}/api/php/Payment/testQueryDepositOrder?orderNo=DC862728165358559819&paymentSupplier=MasterPay",
+                          "host": [
+                            "{{host}}"
+                          ],
+                          "path": [
+                            "api",
+                            "php",
+                            "Payment",
+                            "testQueryDepositOrder"
+                          ],
+                          "query": [
+                            {
+                              "key": "orderNo",
+                              "value": "DC862728165358559819"
+                            },
+                            {
+                              "key": "paymentSupplier",
+                              "value": "MasterPay"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{}"
+                    }
+                  ]
+                },
+                {
+                  "name": "查询三方账户余额",
+                  "event": [
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "f7fafbe0-763d-41d6-a312-0cca1f6312c9",
+                        "exec": [
+                          ""
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    },
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "c7df3493-d331-48c8-92cf-d721eacd84af",
+                        "exec": [
+                          "pm.test(\"状态码应该是 200\", function () {",
+                          "    pm.response.to.have.status(200);",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "id": "401a1460-4060-4e3a-9d1c-37734e6c0adc",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay",
+                      "host": [
+                        "{{host}}"
+                      ],
+                      "path": [
+                        "api",
+                        "php",
+                        "Payment",
+                        "testQueryBalance"
+                      ],
+                      "query": [
+                        {
+                          "key": "paymentSupplier",
+                          "value": "OKPay",
+                          "uuid": "f34e2bc7-4acd-4f78-96af-a9b3949da472"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "f9cdc367-7dc7-4dd1-9528-a202cac70dd8",
+                      "name": "OKPay",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{host}}/api/php/Payment/testQueryBalance?paymentSupplier=OKPay",
+                          "host": [
+                            "{{host}}"
+                          ],
+                          "path": [
+                            "api",
+                            "php",
+                            "Payment",
+                            "testQueryBalance"
+                          ],
+                          "query": [
+                            {
+                              "key": "paymentSupplier",
+                              "value": "OKPay"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{}"
+                    }
+                  ]
+                },
+                {
+                  "name": "代付回调",
+                  "event": [
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "0614a4c5-bf0c-4e2d-b9e1-a44fd9d73536",
+                        "exec": [
+                          ""
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    },
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "4e84e926-eaea-4044-9344-f17887dbd946",
+                        "exec": [
+                          "pm.test(\"状态码应该是 200\", function () {",
+                          "    pm.response.to.have.status(200);",
+                          "});",
+                          "",
+                          "pm.test(\"响应 code 应该是 2051 且消息匹配\", function () {",
+                          "    var jsonData = pm.response.json();",
+                          "    pm.expect(jsonData).to.have.property('code');",
+                          "    pm.expect(jsonData).to.have.property('message');",
+                          "    pm.expect(jsonData.code).to.equal(2051);",
+                          "    pm.expect(jsonData.message).to.match(/^当前状态不允许此操作/);",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "id": "edc540a2-7ed1-459b-8749-b373a18bf093",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "mchId",
+                          "value": "1000",
+                          "type": "text"
+                        },
+                        {
+                          "key": "out_trade_no",
+                          "value": "WC869478861258006203",
+                          "type": "text"
+                        },
+                        {
+                          "key": "currency",
+                          "value": "PKR",
+                          "type": "text"
+                        },
+                        {
+                          "key": "money",
+                          "value": "100.00",
+                          "type": "text"
+                        },
+                        {
+                          "key": "real_money",
+                          "value": "100.00",
+                          "type": "text"
+                        },
+                        {
+                          "key": "status",
+                          "value": "2",
+                          "type": "text"
+                        }
+                      ],
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{host}}/api/php/User/withdrawCallback?channel=OKPay",
+                      "host": [
+                        "{{host}}"
+                      ],
+                      "path": [
+                        "api",
+                        "php",
+                        "User",
+                        "withdrawCallback"
+                      ],
+                      "query": [
+                        {
+                          "key": "channel",
+                          "value": "OKPay",
+                          "uuid": "7291361b-135a-4ad6-9277-7be4e1e7ea91"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "732e4892-3f82-4b60-8c13-ecfe50bbf065",
+                      "name": "OKPay",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "name": "Content-Type",
+                            "value": "application/x-www-form-urlencoded",
+                            "type": "text"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "key": "mchId",
+                              "value": "1000",
+                              "type": "text"
+                            },
+                            {
+                              "key": "out_trade_no",
+                              "value": "WC869478861258006203",
+                              "type": "text"
+                            },
+                            {
+                              "key": "currency",
+                              "value": "PKR",
+                              "type": "text"
+                            },
+                            {
+                              "key": "money",
+                              "value": "100.00",
+                              "type": "text"
+                            },
+                            {
+                              "key": "real_money",
+                              "value": "100.00",
+                              "type": "text"
+                            },
+                            {
+                              "key": "status",
+                              "value": "2",
+                              "type": "text"
+                            }
+                          ],
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{host}}/api/php/User/withdrawCallback?channel=OKPay",
+                          "host": [
+                            "{{host}}"
+                          ],
+                          "path": [
+                            "api",
+                            "php",
+                            "User",
+                            "withdrawCallback"
+                          ],
+                          "query": [
+                            {
+                              "key": "channel",
+                              "value": "OKPay",
+                              "uuid": "131c18d4-3406-41ba-bc53-d1ff2b8180b0"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{}"
+                    }
+                  ]
+                }
+              ],
+              "id": "cdd57eae-1d00-4d55-ab60-01747d25af3e"
+            }
+          ],
+          "id": "08b886ec-efb5-4265-a6a2-29c27bc8ed4f"
+        }
+      ],
+      "id": "e1c7b26d-b761-492a-9279-8f4382bd6c25"
+    }
+  ],
+  "variable": [
+    {
+      "id": "010d0269-b827-4e44-9e7c-4d95e7e83d97",
+      "key": "baseUrl",
+      "value": "http://genius-game.kbtech.local"
+    }
+  ]
+}
